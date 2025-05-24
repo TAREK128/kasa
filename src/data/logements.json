@@ -1,0 +1,22 @@
+[
+  {
+    "id": "c67ab8a7",
+    "title": "Appartement cosy",
+    "cover": "/images/appt1.jpg"
+  },
+  {
+    "id": "a123b456",
+    "title": "Studio lumineux",
+    "cover": "/images/studio.jpg"
+  },
+  {
+    "id": "b789c012",
+    "title": "Maison en bord de mer",
+    "cover": "/images/maison.jpg"
+  },
+  {
+    "id": "c67ab8a8",
+    "title": "Appartement cosy",
+    "cover": "/images/appt1.jpg"
+  }
+]
