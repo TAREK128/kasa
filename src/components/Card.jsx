@@ -1,16 +1,20 @@
-import React from 'react'
-import '../styles/Card.scss'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "../styles/Card.scss";
 
 function Card({ id, title, cover }) {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate(`/logement/${id}`);
+  }
+
   return (
-    <Link to={`/logement/${id}`} className="card">
-      <img src={cover} alt={title} className="card__image" />
-      <div className="card__overlay">
-        <h2 className="card__title">{title}</h2>
-      </div>
-    </Link>
-  )
+    <div className="card" onClick={handleClick} tabIndex={0} role="button" aria-pressed="false">
+      <img src={cover} alt={title} className="card-image" />
+      <div className="card-title">{title}</div>
+    </div>
+  );
 }
 
-export default Card
+export default Card;

@@ -1,0 +1,27 @@
+.collapse {
+  margin: 1rem 0;
+
+  .collapse-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .arrow {
+    transition: transform 0.3s ease;
+    &.open {
+      transform: rotate(180deg);
+    }
+  }
+
+  .collapse-content {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+  }
+}

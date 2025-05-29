@@ -6,19 +6,25 @@ import Logement from './pages/Logement';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Header from './components/Header'
+import Footer from './components/Footer';
 
 function App() {
   return (
     <>
-      <Header /> {/* هذا هو الهيدر */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/logement/:id" element={<Logement />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Header />
+
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/logement/:id" element={<Logement />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+       <Footer /> 
     </>
   )
 }
+
 
 export default App;

@@ -2,6 +2,9 @@
 @import './mixins';
 @import './reset';
 @import './base';
+@import "components/collapse";
+@import "components/gallery";
+@import "pages/logement";
 
 
 :root {
@@ -71,4 +74,5 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+  
 }
