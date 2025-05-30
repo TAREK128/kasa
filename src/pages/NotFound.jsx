@@ -1,13 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
+
+import { Link } from 'react-router-dom';
+import '../styles/NotFound.scss';
 
 function NotFound() {
   return (
-    <main style={{ padding: "2rem", textAlign: "center" }}>
-      <h2>404 - Page non trouvée</h2>
-      <p>La page que vous recherchez n'existe pas.</p>
-      <Link to="/">Retour à l'accueil</Link>
-    </main>
+    <div className="not-found">
+      <h1 className="not-found-code">404</h1>
+      <p className="not-found-message">Oups! La page que vous demandez n'existe pas.</p>
+      <Link to="/" className="not-found-link">Retourner sur la page d’accueil</Link>
+    </div>
   );
 }
 

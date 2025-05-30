@@ -1,0 +1,39 @@
+// src/styles/NotFound.scss
+.not-found {
+  text-align: center;
+  color: #FF6060;
+  padding: 50px 20px;
+
+  .not-found-code {
+    font-size: 200px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .not-found-message {
+    font-size: 24px;
+    margin: 30px 0;
+  }
+
+  .not-found-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #FF6060;
+    font-size: 18px;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .not-found-code {
+      font-size: 100px;
+    }
+
+    .not-found-message {
+      font-size: 18px;
+    }
+
+    .not-found-link {
+      font-size: 16px;
+    }
+  }
+}

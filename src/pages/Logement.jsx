@@ -9,7 +9,8 @@ function Logement() {
   const logement = logements.find((item) => item.id === id);
 
   // إذا لم يوجد السكن --> صفحة 404
-  if (!logement) return <Navigate to="*" />;
+ if (!logement) return <Navigate to="/404" replace />;
+
 
   /* ---------- carousel ---------- */
   const [current, setCurrent] = useState(0);

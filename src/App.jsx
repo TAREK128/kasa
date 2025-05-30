@@ -1,30 +1,28 @@
-import { Routes, Route } from 'react-router-dom';
 
-// Pages
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
-import Logement from './pages/Logement';
 import About from './pages/About';
+import Logement from './pages/Logement';
 import NotFound from './pages/NotFound';
-import Header from './components/Header'
+import Header from './components/Header';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <>
       <Header />
-
-      <div className="main-content">
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/logement/:id" element={<Logement />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
-      </div>
-       <Footer /> 
+      </main>
+      <Footer />
     </>
-  )
+  );
 }
-
 
 export default App;
