@@ -1,0 +1,16 @@
+.about {
+ 
+
+  .about-dropdowns {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 40px 0;
+     padding: 0 92px;
+     width: 100%;
+  }
+  .dropdown {
+    width: 100%;
+    max-width: 805px;
+}
+}
