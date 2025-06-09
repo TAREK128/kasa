@@ -10,6 +10,9 @@ function Home() {
       <Banner image={homeBanner} text="Chez vous, partout et ailleurs" />
       
       <section className="cards-grid">
+        {/* لوجمونت الاولى هي فنكشن  تحتوي بيانات الشقق*/}
+        {/* لوجمونت الثانية  هي فاريابل  لكل شقه اثناء التكرار*/}
+        {/* لكل شقه نضيف مكون كارت ونمرر له المعلومات */}
         {logements.map((logement) => (
           <Card
             key={logement.id}
