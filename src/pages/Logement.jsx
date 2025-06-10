@@ -1,46 +1,35 @@
+//ملف صفحات الشقق
+//useParams//لأخذ قيمة ايدي من رابط الصفحة
 import { useParams, Navigate } from 'react-router-dom';
 import logements from '../data/logements.json';
 import { useState } from 'react';
 import '../styles/Logement.scss';
 import Dropdown from '../components/Dropdown';
+import NotFound from './NotFound'
+import Carousel from '../components/Carousel';
 
 function Logement() {
+  // تعني استخراج ايدي من الكائن الذي تُرجعه يوزبارامس
   const { id } = useParams();
+
+  // فند فنكشن تبحث في الاريه لوجمو وترجع العنصر ايتم
+  //ايتم هو ايدي خاص بكل شقة 
+  //حصلنا على الايدي من الدالة التي فوق
   const logement = logements.find((item) => item.id === id);
 
   // إذا لم يوجد السكن --> صفحة 404
- if (!logement) return <Navigate to="/404" replace />;
+ if (!logement) return <NotFound />;
 
 
-  /* ---------- carousel ---------- */
-  const [current, setCurrent] = useState(0);
-  const next  = () => setCurrent((i) => (i + 1) % logement.pictures.length);
-  const prev  = () => setCurrent((i) =>
-    i === 0 ? logement.pictures.length - 1 : i - 1
-  );
-
+  
   /* ---------- النجوم ---------- */
   const fullStars = parseInt(logement.rating, 10); // من 0 إلى 5
   const stars = Array.from({ length: 5 }, (_, i) => i < fullStars);
 
   return (
     <div className="logement-container">
-      {/* --- Carousel --- */}
-      <div className="carousel">
-        <img src={logement.pictures[current]}
-             alt={`${logement.title} ${current + 1}`}
-             className="carousel-image" />
-
-        {logement.pictures.length > 1 && (
-          <>
-            <button className="carousel-arrow left"  onClick={prev}>❮</button>
-            <button className="carousel-arrow right" onClick={next}>❯</button>
-            <div className="carousel-counter">
-              {current + 1}/{logement.pictures.length}
-            </div>
-          </>
-        )}
-      </div>
+      
+     <Carousel pictures={logement.pictures} title={logement.title} />
 
       {/* --- العنوان والمضيف --- */}
       <div className="logement-info">

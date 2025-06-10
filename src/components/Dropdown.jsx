@@ -2,14 +2,15 @@ import { useState } from 'react'
 import '../styles/Dropdown.scss'
 import arrowIcon from '../assets/arrow.svg' 
 
-//أنشأنا حالة (state) اسمها isOpen
+//انشاء مكون دروبداون يستقبل تايتل و كونتانت قادمة من ملف ابوت
 function Dropdown({ title, content }) {
-  //setIsOpen فنكشن
-  //  نستخدمها لتغيير قيمة .isOpen المتغير
-  //بدأنا بـfalse
-  // يعني القائمة مغلقة عند أول تحميل للصفحة
+  //لماذا نستخدم [isOpen, setIsOpen]
+  //لأن useState تُرجع زوجًا من القيم:
+  //المتغر الاول *از اوبن* القيمة الحالية وهي مغلقة
+  //المتغير الثاني *سيت ازن ااوبن* التي تستخدم لعكس قيمة ازاوبن
   const [isOpen, setIsOpen] = useState(false)
-//تقوم فنكشن بعكس قيمة isOpen 
+
+  //انشاء فنكشن *توكلي دروبداون* قيمته  تساوي عكس قيمة ازوبن الاساسية التي هي مغلقة بالاساس
   const toggleDropdown = () => setIsOpen(!isOpen)
 
   return (
