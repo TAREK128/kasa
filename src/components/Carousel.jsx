@@ -17,7 +17,7 @@ function Carousel({ pictures, title }) {
         className="carousel-image"
       />
 
-      {/*اذا كان عدد الصور اكبر من واحد اعرف التالي*/}
+      {/*اذا كان عدد الصور اكبر من واحد اعرض التالي*/}
       {pictures.length > 1 && (
         <>
           <button className="carousel-arrow left" onClick={prev}>❮</button>

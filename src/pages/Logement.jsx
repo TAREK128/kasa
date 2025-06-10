@@ -7,6 +7,8 @@ import '../styles/Logement.scss';
 import Dropdown from '../components/Dropdown';
 import NotFound from './NotFound'
 import Carousel from '../components/Carousel';
+import Stars from '../components/Stars';
+
 
 function Logement() {
   // تعني استخراج ايدي من الكائن الذي تُرجعه يوزبارامس
@@ -21,14 +23,9 @@ function Logement() {
  if (!logement) return <NotFound />;
 
 
-  
-  /* ---------- النجوم ---------- */
-  const fullStars = parseInt(logement.rating, 10); // من 0 إلى 5
-  const stars = Array.from({ length: 5 }, (_, i) => i < fullStars);
-
   return (
     <div className="logement-container">
-      
+
      <Carousel pictures={logement.pictures} title={logement.title} />
 
       {/* --- العنوان والمضيف --- */}
@@ -36,6 +33,8 @@ function Logement() {
         <div className="title-location">
           <h1>{logement.title}</h1>
           <p className="location">{logement.location}</p>
+
+
           {/* --- tagat--- */}
         <div className="tags">
   {logement.tags.map((tag, index) => (
@@ -45,23 +44,25 @@ function Logement() {
         </div>
         
 
+        {/* ---والنجوم الصورة واسم صحاب الشقةt--- */}
         <div className="host-rating">
+
+                 {/* --- النجوم--- */}
+          <div className="rating">
+    <Stars rating={logement.rating} />
+  </div>
+
           <div className="host">
             <span className="host-name">{logement.host.name}</span>
             <img src={logement.host.picture}
                  alt={logement.host.name}
                  className="host-picture" />
           </div>
-          
-
-          <div className="rating">
-            {stars.map((filled, i) => (
-              <span key={i} className={filled ? 'star filled' : 'star'}>★</span>
-            ))}
-            
           </div>
-        </div>
       </div>
+
+
+      {/* --- المستطيلات الاثنين اسفل الصفحة -- */}
       <div className="dropdowns">
       <Dropdown title="Description" content={logement.description} />
       <Dropdown title="Équipements" content={logement.equipments} />

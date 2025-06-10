@@ -28,17 +28,23 @@
 
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;  /* توزيع الشعار والروابط على الأطراف */
+    align-items: center;
     padding: 20px;
+  }
 
-    .nav {
-      margin-top: 20px;
-      gap: 20px;
+  .logo {
+    width: 28%;
+  }
 
-      a {
-        font-size: 18px;
-      }
-    }
+  .nav {
+    display: flex;
+    gap: 10px; /* مسافة بين الروابط */
+  }
+
+  .nav a {
+    font-size: 12px;
+    text-transform: uppercase;
   }
 }
