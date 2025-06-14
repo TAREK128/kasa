@@ -1,6 +1,6 @@
 //ملف صفحات الشقق
 //useParams//لأخذ قيمة ايدي من رابط الصفحة
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import logements from '../data/logements.json';
 import { useState } from 'react';
 import '../styles/Logement.scss';

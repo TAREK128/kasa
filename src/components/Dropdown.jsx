@@ -2,7 +2,7 @@ import { useState } from 'react'
 import '../styles/Dropdown.scss'
 import arrowIcon from '../assets/arrow.svg' 
 
-//انشاء مكون دروبداون يستقبل تايتل و كونتانت قادمة من ملف ابوت
+//انشاء مكون دروبداون يستقبل تايتل و كونتانت بخوب قادمة من ملف الاب  لوجمو
 function Dropdown({ title, content }) {
   //لماذا نستخدم [isOpen, setIsOpen]
   //لأن useState تُرجع زوجًا من القيم:

@@ -52,7 +52,7 @@
   flex-wrap: wrap;
 
   .title-location {
-    max-width: 70%;
+    max-width: 90%;
 
     h1 {
       margin: 0;
@@ -83,7 +83,7 @@
 
   .host-rating {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-end;
     gap: 10px;
 
